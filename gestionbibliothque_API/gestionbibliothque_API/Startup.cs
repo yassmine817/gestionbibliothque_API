@@ -1,7 +1,10 @@
+using gestionbibliothque_API.DataModels;
+using gestionbibliothque_API.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,10 +31,18 @@ namespace gestionbibliothque_API
         {
 
             services.AddControllers();
+
+            services.AddDbContext<EmployerAdminContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("LibraryDb")));
+
+            services.AddScoped<ILivreRepository, SqlLivreRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "gestionbibliothque_API", Version = "v1" });
             });
+
+            services.AddAutoMapper(typeof(Startup).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
