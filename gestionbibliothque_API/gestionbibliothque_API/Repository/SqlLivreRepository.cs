@@ -15,15 +15,20 @@ namespace gestionbibliothque_API.Repository
             this.context = context;
         }
 
+      
 
-        public async Task< List<Livre>> GetLivres()
+        public async Task< List<Livre>> GetLivresAsync()
         {
             return  await context.Livre.Include(nameof(TypeLivre)).Include(nameof(Auteurs)).ToListAsync();
         }
 
-        public Task<List<Livre>> GetLivresAsync()
+        public async Task <Livre> GetLivreAsync(Guid LivreId)
         {
-            throw new NotImplementedException();
+            return await context.Livre
+                .Include(nameof(TypeLivre)).Include(nameof(Auteurs))
+                .FirstOrDefaultAsync(x => x.Id == LivreId);
         }
+
+   
     }
 }

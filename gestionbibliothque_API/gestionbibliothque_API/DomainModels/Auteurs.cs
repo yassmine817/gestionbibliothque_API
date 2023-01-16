@@ -8,7 +8,7 @@ namespace gestionbibliothque_API.DomainModels
     public class Auteurs
     {
         public Guid id_auteur { get; set; }
-        public Guid nom { get; set; }
+        public String nom { get; set; }
 
 
 

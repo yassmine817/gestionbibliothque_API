@@ -8,7 +8,7 @@ namespace gestionbibliothque_API.DomainModels
     public class TypeLivre
     {
 
-        public Guid idTypeLivre { get; set; }
+        public Guid Id { get; set; }
         public string Type { get; set; }
     }
 }

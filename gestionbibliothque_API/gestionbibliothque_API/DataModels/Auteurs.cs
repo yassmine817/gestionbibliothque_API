@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 namespace gestionbibliothque_API.DataModels
 {
     public class Auteurs
-    {
-        public Guid id_auteur { get; set; }
-        public Guid nom { get; set; }
+    {  
+        public Guid Id { get; set; }
+        public string Nom { get; set; }
 
 
 
         //navigation property 
-        public Guid codeLivre { get; set; }
+        public Guid CodeLivre { get; set; }
     }
 }

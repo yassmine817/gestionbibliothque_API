@@ -8,7 +8,7 @@ namespace gestionbibliothque_API.Repository
 {
     public interface ILivreRepository
     {
-
-       Task< List<Livre>> GetLivresAsync();
+        Task<List<Livre>> GetLivresAsync();
+        Task<Livre> GetLivreAsync(Guid LivreId);
     }
 }

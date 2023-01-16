@@ -7,7 +7,7 @@ namespace gestionbibliothque_API.DataModels
 {
     public class Livre
     {
-        public  Guid CodeLivre { get; set; }
+        public  Guid Id { get; set; }
         public string Titre { get; set; }
         public string Langue { get; set; }
         public string maisonEdition { get; set; }
@@ -15,7 +15,7 @@ namespace gestionbibliothque_API.DataModels
         public int Nbpage { get; set; }
         public int prixAchat { get; set; }
         public int  AnneEdition { get; set; }
-        public Guid idTypeLivre { get; set; }
+        public Guid IdTypeLivre { get; set; }
 
 
         //Navigation properties

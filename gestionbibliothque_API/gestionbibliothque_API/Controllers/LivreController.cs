@@ -4,7 +4,7 @@ using gestionbibliothque_API.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using System;
 namespace gestionbibliothque_API.Controllers
 {
     [ApiController]
@@ -26,5 +26,22 @@ namespace gestionbibliothque_API.Controllers
             
             return Ok(mapper.Map<List<Livre>>(livre));
         }
+
+        [HttpGet]
+        [Route("[controller]/{livreId:guid}"), ActionName("GetLivresAsync")]
+        public async Task<IActionResult> GetLivreAsync([FromRoute] Guid LivreId)
+        {
+            // Fetch Student Details
+            var livre = await livreRepository.GetLivreAsync(LivreId);
+
+            // Return Student
+            if (livre == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(mapper.Map<Livre>(livre));
+        }
+        
     }
 }
