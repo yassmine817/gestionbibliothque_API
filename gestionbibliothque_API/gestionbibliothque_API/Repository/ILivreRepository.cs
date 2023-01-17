@@ -10,5 +10,14 @@ namespace gestionbibliothque_API.Repository
     {
         Task<List<Livre>> GetLivresAsync();
         Task<Livre> GetLivreAsync(Guid LivreId);
+        Task<Auteurs> GetOneAuteurAsync(Guid AuteurId);
+
+        Task<List<Auteurs>> GetAuteursAsync();
+        Task<Auteurs> AddAuteur(Auteurs request);
+
+        Task<bool> Exists(Guid LivreId);
+        Task<Livre> UpdateLivre(Guid LivreId, Livre request);
+        Task<Livre> DeleteLivre(Guid LivreId);
+        Task<Livre> AddLivre(Livre request);
     }
 }

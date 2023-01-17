@@ -10,9 +10,5 @@ namespace gestionbibliothque_API.DataModels
         public Guid Id { get; set; }
         public string Nom { get; set; }
 
-
-
-        //navigation property 
-        public Guid CodeLivre { get; set; }
     }
 }

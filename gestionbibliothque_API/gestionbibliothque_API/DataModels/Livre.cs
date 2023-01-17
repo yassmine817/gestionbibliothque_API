@@ -16,7 +16,7 @@ namespace gestionbibliothque_API.DataModels
         public int prixAchat { get; set; }
         public int  AnneEdition { get; set; }
         public Guid IdTypeLivre { get; set; }
-
+        public Guid AuteursId { get; set; }
 
         //Navigation properties
 
